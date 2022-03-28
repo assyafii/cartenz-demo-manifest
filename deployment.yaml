@@ -18,7 +18,7 @@ spec:
         app: web-demo
     spec:
       containers:
-      - image: muhammadluthfias/web-demo:18
+      - image: muhammadluthfias/web-demo:latest
         name: web-demo
         resources: {}
 status: {}
