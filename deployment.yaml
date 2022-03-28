@@ -3,36 +3,35 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: flaskdemo
-  name: flaskdemo
+    app: web-demo
+  name: web-demo
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: flaskdemo
+      app: web-demo
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: flaskdemo
+        app: web-demo
     spec:
       containers:
-      - image: muhammadluthfias/flask-test:18
-        name: flaskdemo
+      - image: muhammadluthfias/web-demo:18
+        name: web-demo
         resources: {}
 status: {}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: lb-service
+  name: web-demo-svc
   labels:
-    app: lb-service
+    run: web-demo-svc
 spec:
-  type: NodePort
   ports:
   - port: 80
-    targetPort: 5000
+    protocol: TCP
   selector:
-    app: flaskdemo
+    run: web-demo
