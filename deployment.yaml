@@ -17,7 +17,7 @@ spec:
         app: web-demo
     spec:
       containers:
-      - image: muhammadluthfias/web-demo:21
+      - image: muhammadluthfias/web-demo:latest
         name: web-demo
         ports:
         - containerPort: 80
